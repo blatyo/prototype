@@ -173,7 +173,7 @@ new Test.Unit.Runner({
     this.assertEnumEqual([], [0].without(0));
     this.assertEnumEqual([1], [0,1].without(0));
     this.assertEnumEqual([1,2], [0,1,2].without(0));
-	this.assertEnumEqual([], [1].without('1'));
+    this.assertEnumEqual([], [1].without('1'));
   },
   
   test$w: function(){
