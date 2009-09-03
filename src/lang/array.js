@@ -231,9 +231,7 @@ Array.from = $A;
    *  given arrays.
   **/
   function intersect(array) {
-    return this.uniq().findAll(function(item) {
-      return array.detect(function(value) { return item === value });
-    });
+    return this.without.apply(this, this.without.apply(this, array)).uniq();
   }
 
   /** alias of: Array#clone
