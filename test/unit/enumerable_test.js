@@ -151,9 +151,8 @@ new Test.Unit.Runner({
     this.assert(Fixtures.Nicknames.include('noradio'));
     this.assert(!Fixtures.Nicknames.include('gmosx'));
     this.assert(Fixtures.Basic.include(2));
-	this.assert(!Fixtures.Basic.include(4));
+    this.assert(!Fixtures.Basic.include(4));
     this.assert(!Fixtures.Basic.include('2'));
-    this.assert(!Fixtures.Basic.include('4'));
   },
   
   testInGroupsOf: function() {

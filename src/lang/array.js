@@ -187,7 +187,7 @@ Array.from = $A;
    *  - value (?): A value to exclude.
    *
    *  Produces a new version of the array that does not contain any of the
-   *  specified values.
+   *  specified values, based on the `===` comparison operator.
   **/
   function without() {
     var values = slice.call(arguments, 0);
@@ -213,7 +213,8 @@ Array.from = $A;
    *      a less-costly algorithm will be used.
    *
    *  Produces a duplicate-free version of an array. If no duplicates are
-   *  found, the original array is returned.
+   *  found, the original array is returned, based on the `===` comparison 
+   *  operator.
   **/
   function uniq(sorted) {
     return this.inject([], function(array, value, index) {
@@ -228,9 +229,10 @@ Array.from = $A;
    *  - array (Array): A collection of values.
    *
    *  Returns an array containing every item that is shared between the two
-   *  given arrays.
+   *  given arrays, based on the `===` comparison operator.
   **/
   function intersect(array) {
+    //Works by subtracting all non-intersecting values from the array.
     return this.without.apply(this, this.without.apply(this, array)).uniq();
   }
 
@@ -288,7 +290,7 @@ Array.from = $A;
    *      search.
    *
    *  Returns the position of the first occurrence of `item` within the array &mdash; or
-   *  `-1` if `item` doesn't exist in the array.
+   *  `-1` if `item` doesn't exist in the array, based on the `===` comparison operator.
   **/
   function indexOf(item, i) {
     i || (i = 0);

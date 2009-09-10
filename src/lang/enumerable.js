@@ -294,7 +294,7 @@ var Enumerable = (function() {
     var result;
     this.each(function(value, index) {
       value = iterator.call(context, value, index);
-      if (result === null || value >= result)
+      if (result == null || value >= result)
         result = value;
     });
     return result;
@@ -313,7 +313,7 @@ var Enumerable = (function() {
     var result;
     this.each(function(value, index) {
       value = iterator.call(context, value, index);
-      if (result === null || value < result)
+      if (result == null || value < result)
         result = value;
     });
     return result;
