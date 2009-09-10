@@ -224,7 +224,7 @@ var Enumerable = (function() {
    *  Enumerable#include(object) -> Boolean
    *
    *  Determines whether a given object is in the Enumerable or not,
-   *  based on the `==` comparison operator. Aliased as [[Enumerable#member]].
+   *  based on the `===` comparison operator. Aliased as [[Enumerable#member]].
   **/
   function include(object) {
     if (Object.isFunction(this.indexOf))
@@ -232,7 +232,7 @@ var Enumerable = (function() {
 
     var found = false;
     this.each(function(value) {
-      if (value == object) {
+      if (value === object) {
         found = true;
         throw $break;
       }
@@ -294,7 +294,7 @@ var Enumerable = (function() {
     var result;
     this.each(function(value, index) {
       value = iterator.call(context, value, index);
-      if (result == null || value >= result)
+      if (result === null || value >= result)
         result = value;
     });
     return result;
@@ -313,7 +313,7 @@ var Enumerable = (function() {
     var result;
     this.each(function(value, index) {
       value = iterator.call(context, value, index);
-      if (result == null || value < result)
+      if (result === null || value < result)
         result = value;
     });
     return result;
